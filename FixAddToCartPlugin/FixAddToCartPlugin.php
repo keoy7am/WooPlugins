@@ -1,10 +1,10 @@
-﻿<?php
+﻿﻿<?php
 /**
   Plugin Name: 修正加入購物車按鈕
   Plugin URI: https://github.com/keoy7am/WooPlugins/tree/master/FixAddToCartPlugin
   Description: 強制加入購物車按鈕顯示為 "加入購物車"
   Author: Elliot.Chen
-  Version: 1.0
+  Version: 1.1
   Author URI: https://github.com/keoy7am
   License: GPLv2
 **/
@@ -15,8 +15,11 @@ defined('ABSPATH') || exit;
 $jQueryStr = <<<'jQueryStrInput'
 <script>
 jQuery(document).ready(function($) {
-  jQuery(".ajax_add_to_cart").text("加入購物車");
-  jQuery(".ajax_add_to_cart").attr("aria-label","加入購物車");
+  $(".ajax_add_to_cart").text("加入購物車");
+  $(".ajax_add_to_cart").attr("aria-label","加入購物車");
+  $(".button.single_add_to_cart_button").text("加入購物車");
+  $(".button.product_type_grouped").text("加入購物車");
+  $(".compare.button").text("加入比較");
 });
 </script>
 jQueryStrInput;
@@ -43,7 +46,7 @@ function add_custom_related_products_hooks()
     $add_result1 = add_filter('add_to_cart_text', 'modify_add_to_cart_text');
     $add_result2 = add_filter('woocommerce_product_single_add_to_cart_text', 'modify_add_to_cart_text');
     $add_result3 = add_filter('woocommerce_product_add_to_cart_text', 'modify_add_to_cart_text');
-    $add_result4 = add_action('woocommerce_after_single_product_summary', 'jquery_modify_add_to_cart_text', 5);
+    $add_result4 = add_action('wp_footer', 'jquery_modify_add_to_cart_text', 5);
 
     // Dump
     if (defined('WP_DEBUG') && true === WP_DEBUG) {
@@ -51,7 +54,7 @@ function add_custom_related_products_hooks()
         echo "<hr/>result of add_filter to  add_to_cart_text = " . $add_result1 . "<hr/>";
         echo "<hr/>result of add_filter to woocommerce_product_single_add_to_cart_text = " . $add_result2 . "<hr/>";
         echo "<hr/>result of add_filter to  woocommerce_product_add_to_cart_text = " . $add_result3 . "<hr/>";
-        echo "<hr/>result of add_action to jquery_modify_add_to_cart_text = " . $add_result4 . "<hr/>";
+        echo "<hr/>result of add_action to wp_footer = " . $add_result4 . "<hr/>";
     }
 }
 add_action('plugins_loaded', 'add_custom_related_products_hooks');
