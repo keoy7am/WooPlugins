@@ -1,7 +1,7 @@
 ﻿<?php
 /**
   Plugin Name: 運送方式插件
-  Plugin URI: https://github.com/keoy7am/WooPlugins/ShippingMethodPlugin/
+  Plugin URI: https://github.com/keoy7am/WooPlugins/tree/master/ShippingMethodPlugin
   Description: 貨到付款／貨到刷卡
   Author: Elliot.Chen
   Version: 1.0

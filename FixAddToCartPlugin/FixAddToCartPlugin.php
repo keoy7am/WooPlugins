@@ -1,7 +1,7 @@
 ﻿<?php
 /**
   Plugin Name: 修正加入購物車按鈕
-  Plugin URI: https://github.com/keoy7am/WooPlugins/FixAddToCartPlugin/
+  Plugin URI: https://github.com/keoy7am/WooPlugins/tree/master/FixAddToCartPlugin
   Description: 強制加入購物車按鈕顯示為 "加入購物車"
   Author: Elliot.Chen
   Version: 1.0

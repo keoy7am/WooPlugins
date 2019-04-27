@@ -1,7 +1,7 @@
 ﻿<?php
 /**
   Plugin Name: 發票插件
-  Plugin URI: https://github.com/keoy7am/WooPlugins/InvoicePlugin/
+  Plugin URI: https://github.com/keoy7am/WooPlugins/tree/master/InvoicePlugin
   Description: 二聯／三聯（包括公司抬頭統編）
   Author: Elliot.Chen
   Version: 1.0
